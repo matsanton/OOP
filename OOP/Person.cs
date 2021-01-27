@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OOP
 {
@@ -14,7 +12,7 @@ namespace OOP
         private double weight;
         #endregion
 
-        #region Public properties
+        #region Properties
         public int Age
         {
             get
@@ -28,10 +26,9 @@ namespace OOP
                     throw new ArgumentException("Age must be greater than zero.");
                 }
                 age = value;
-
             }
         }
-        public string FName 
+        public string FName
         {
             get
             {
@@ -46,7 +43,7 @@ namespace OOP
                 fName = value;
             }
         }
-        public string LName 
+        public string LName
         {
             get
             {
