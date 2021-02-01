@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 
-
 namespace OOP
 {
     class Program
@@ -37,28 +36,51 @@ namespace OOP
             ////------ Slut 1-4 -----
 
             // 5.
-            PersonHandler ph = new PersonHandler();
+            //PersonHandler ph = new PersonHandler();
+
+            //var persons = new List<Person>()
+            //{
+            //    ph.CreatePerson(56, "Sven", "Gardin", 1.83, 84.5),
+            //    ph.CreatePerson(44, "Nisse", "Pärlemo", 1.68, 92.0),
+            //    ph.CreatePerson(47, "Astor", "Flanell", 1.75, 78.0),
+            //    ph.CreatePerson(32, "Salvador", "Dahlberg", 1.88, 83.0)
+            //};
+
+            //foreach (var person in persons)
+            //{
+            //    Console.WriteLine($"Personen " +
+            //        $"{ph.GetFullName(person)} är {ph.GetAge(person)} år, väger {ph.GetWeight(person)} kg.");
+            //}
+
+            //ph.SetWeight(persons[0], 85);
+            //ph.SetAge(persons[0], 57);
+
+            //Console.WriteLine($"{ph.GetFullName(persons[0])}s nya vikt och ålder är " +
+            //    $"{ph.GetWeight(persons[0])} kg och {ph.GetAge(persons[0])} år.");
+            //// ------ Slut 5 ------
 
 
-
-            List<Person> persons = new List<Person>();
-            persons.Add(ph.CreatePerson(56, "Sven", "Gardin", 1.83, 84.5));
-            persons.Add(ph.CreatePerson(32, "Salvador", "Dahlberg", 1.85, 83.0));
-            persons.Add(ph.CreatePerson(44, "Nisse", "Pärlemo", 1.78, 92.0));
-            persons.Add(ph.CreatePerson(47, "Astor", "Flanell", 1.82, 78.0));
-
-            foreach (var person in persons)
+            var animals = new List<Animal>()
             {
-                Console.WriteLine($"Personen {ph.GetFullName(person)} är {ph.GetAge(person)} år, väger {ph.GetWeight(person)} kg");
+                new Horse(), new Bird(), new Wolf(), new Dog()
+            };
+
+            foreach (var animal in animals)
+            {
+                //if (animal is IPerson)
+
+                animal.DoSound();
             }
 
-            ph.SetWeight(persons[0], 85);
-            ph.SetAge(persons[0], 57);
+            var dogs = new List<Dog>()
+            {
+                new Dog(){Name="Fido", Age=5, Breed="Pudel", Weight=15 },
+                new Dog(){Name="Lassie", Age=4, Breed="Collie", Weight=20 }
+            };
 
-            Console.WriteLine($"{ph.GetFullName(persons[0])}s nya vikt och ålder är {ph.GetWeight(persons[0])} kg och {ph.GetAge(persons[0])} år");
+            var aHorse = new Horse();
 
-
-
+            //dogs.Add(aHorse);
 
 
 
