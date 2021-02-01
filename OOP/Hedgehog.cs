@@ -1,23 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OOP
 {
-    class Hedgehog : Animal
+    public class Hedgehog : Animal
     {
         public int NumberOfSpikes { get; set; }
 
+        public Hedgehog(string name, int numberOfSpikes, int age, double weight) : base(name, age, weight)
+        {
+            NumberOfSpikes = numberOfSpikes;
+        }
+
         public override void DoSound()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("mjau");
         }
 
         public override string Stats()
         {
-            return base.Stats() + $", Spikes: {NumberOfSpikes}";
+            return base.Stats() + $", antal taggar: {NumberOfSpikes}";
         }
-
 
     }
 }

@@ -1,11 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace OOP
+﻿namespace OOP
 {
-    class Pelican : Bird
+    public class Pelican : Bird
     {
         public double BeekVolume { get; set; }
+
+        public Pelican(string name, int age, double weight, double wingspan, double beekVolume) : base(name, age, weight, wingspan)
+        {
+            BeekVolume = beekVolume;
+        }
+
     }
 }
+

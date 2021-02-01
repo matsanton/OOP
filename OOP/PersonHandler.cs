@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace OOP
+﻿namespace OOP
 {
-    class PersonHandler
+    public class PersonHandler
     {
         #region Constructor
         public Person CreatePerson(int age, string fname, string lname, double height, double weight)

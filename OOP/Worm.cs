@@ -1,23 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OOP
 {
-    class Worm : Animal
+    public class Worm : Animal
     {
         public bool IsPoisonous { get; set; }
 
+        public Worm(string name, int age, double weight, bool isPoisonous) : base(name, age, weight)
+        {
+            IsPoisonous = isPoisonous;
+        }
+
         public override void DoSound()
         {
-
+            Console.WriteLine("<tystnad>");
         }
 
         public override string Stats()
         {
-            string retValue = base.Stats();
-            retValue += IsPoisonous ? ", Warning: Poisonous" : "";
-            return retValue;
+            return base.Stats() + (IsPoisonous ? ", gifig" : ", ej giftig");
         }
     }
 }

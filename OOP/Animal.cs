@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace OOP
+﻿namespace OOP
 {
-    abstract class Animal
+    public abstract class Animal
     {
         #region Properties
         public string Name { get; set; }
@@ -12,28 +8,23 @@ namespace OOP
         public double Weight { get; set; }
         #endregion
 
-
-        public Animal()
+        #region Constructor
+        public Animal(string name, int age, double weight)
         {
-
+            Name = name;
+            Age = age;
+            Weight = weight;
         }
-
+        #endregion
 
         #region Methods
         public abstract void DoSound();
 
         public virtual string Stats()
         {
-            return $"{Name}, {Age}, {Weight}";
+            return $"{Name}, ålder: {Age} år, vikt: {Weight} kg";
         }
-
         #endregion
-
-
-
-
-
-
 
     }
 }

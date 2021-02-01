@@ -2,7 +2,7 @@
 
 namespace OOP
 {
-    class Person
+    public class Person
     {
         #region Private fields
         private int age = 1;
@@ -53,7 +53,7 @@ namespace OOP
             {
                 if (value.Length < 3 || value.Length > 15)
                 {
-                    throw new ArgumentException("LName is too short or too long.");
+                    throw new ArgumentException("Lname is too short or too long.");
                 }
                 lName = value;
             }

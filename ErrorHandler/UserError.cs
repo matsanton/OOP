@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ErrorHandler
+﻿namespace ErrorHandler
 {
     public abstract class UserError
     {

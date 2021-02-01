@@ -4,15 +4,14 @@ using System.Collections.Generic;
 
 namespace OOP
 {
-    class Program
+    internal class Program
     {
-        static void Main()
+        private static void Main()
         {
-            ////Test av uppgift 1-4
-            //Console.WriteLine("Skapar Nisse Hult");
-            //Person person = new Person("Nisse", "Hult");
-            //person.Age = 39;
-            //Console.WriteLine($"{person.FName} {person.LName} är {person.Age} år gammal.");
+            ////Test av uppgift 3.1) 1-4
+            //Person p0= new Person("Nisse", "Hult");
+            //p0.Age = 39;
+            //Console.WriteLine($"{p0.FName} {p0.LName} är {p0.Age} år gammal.");
 
             //try
             //{
@@ -26,16 +25,16 @@ namespace OOP
 
             //try
             //{
-            //    Console.WriteLine($"Sätter ålder på {person.FName}");
-            //    person.Age = 0;
+            //    Console.WriteLine($"Sätter ålder på {p0.FName}");
+            //    p0.Age = 0;
             //}
             //catch (ArgumentException ex)
             //{
             //    Console.WriteLine($"Fel ålder: {ex.Message}");
             //}
-            ////------ Slut 1-4 -----
+            ////------ Slut 3.1) 1-4 ------
 
-            // 5.
+            // 3.1) 5
             //PersonHandler ph = new PersonHandler();
 
             //var persons = new List<Person>()
@@ -57,32 +56,67 @@ namespace OOP
 
             //Console.WriteLine($"{ph.GetFullName(persons[0])}s nya vikt och ålder är " +
             //    $"{ph.GetWeight(persons[0])} kg och {ph.GetAge(persons[0])} år.");
-            //// ------ Slut 5 ------
+            //// ------ Slut 3.1) 5 ------
 
+            // 3.2 Arv
+            // Svar på 13. Om alla fåglar behöver ett nytt attribut läggs det i klassen Bird.
+            // Svar på 14. Om alla djur behöver ett nytt attribut läggs det i klassen Animal.
 
+            // 3.3 Polymorfism
             var animals = new List<Animal>()
             {
-                new Horse(), new Bird(), new Wolf(), new Dog()
+                new Horse("Pålle", "Kallblod", 9, 300.0),
+                new Bird("Polly", 2, 0.2, 0.90),
+                new Wolf("Stora stygga vargen", 30, 100.0, 2.3),
+                new Dog("Lufsen", "Blandad",6, 40.0),
+                new Worm("Max", 1, .02, isPoisonous: false),
+                new Hedgehog("Sonic", numberOfSpikes: 849, age: 10, weight: 5.5 ),
+                new Wolfman("Jack", 39, 90, 2.0, 45),
+                new Dog("Lassie", "Collie", 6, 20.0)
             };
 
             foreach (var animal in animals)
             {
-                //if (animal is IPerson)
-
-                animal.DoSound();
+                Console.WriteLine(animal.ToString());
+                if (animal is IPerson)
+                {
+                    (animal as IPerson).Talk();
+                }
+                else
+                {
+                    animal.DoSound();
+                }
             }
 
             var dogs = new List<Dog>()
             {
-                new Dog(){Name="Fido", Age=5, Breed="Pudel", Weight=15 },
-                new Dog(){Name="Lassie", Age=4, Breed="Collie", Weight=20 }
+                new Dog("Lufsen", "Mixed",6, 40.0),
+                new Dog("Fido", breed: "Pudel", age: 5, weight: 15.0),
+                new Dog("Lassie", "Collie", 6, 20.0)
             };
 
-            var aHorse = new Horse();
+            var aHorse = new Horse("Ina Scott", "Varmblod", 9, 300.0);
+            // 3.3 Polymorfism
+            //dogs.Add(aHorse); går ej
+            // Svar på 9: 
+            // Svar på 10: Måste vara en List<Animal> för att både Dog och Horse ska kunna lagras
+            Console.WriteLine("*** Animal Stats ***");
+            foreach (var animal in animals)
+            {
+                Console.WriteLine(animal.Stats());
+            }
+            // Svar på 13: 
 
-            //dogs.Add(aHorse);
+            foreach (var animal in animals)
+            {
+                if (animal is Dog)
+                {
+                    Console.WriteLine(animal.Stats());
+                    Console.WriteLine((animal as Dog).Info());
+                }
+            }
 
-
+            // Svar på 
 
         }
     }

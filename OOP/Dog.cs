@@ -1,12 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OOP
 {
-    class Dog : Animal
+    public class Dog : Animal
     {
         public string Breed { get; set; }
+
+        public Dog(string name, string breed, int age, double weight) : base(name, age, weight)
+        {
+            Breed = breed;
+        }
 
         public override void DoSound()
         {
@@ -15,7 +18,12 @@ namespace OOP
 
         public override string Stats()
         {
-            return base.Stats() + $"Breed: {Breed}";
+            return base.Stats() + $", ras: {Breed}";
+        }
+
+        public string Info()
+        {
+            return "Endast för hundar.";
         }
     }
 }

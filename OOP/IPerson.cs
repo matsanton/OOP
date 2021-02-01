@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace OOP
+﻿namespace OOP
 {
-    interface IPerson
+    public interface IPerson
     {
         void Talk();
     }

@@ -1,24 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OOP
 {
-    class Wolf : Animal
+    public class Wolf : Animal
     {
-        public override void DoSound()
+        public double TeethLength { get; set; }
+
+        public Wolf(string name, int age, double weight, double teethLength) : base(name, age, weight)
         {
-            Console.WriteLine("Aooooo");
+            TeethLength = teethLength;
         }
 
-        public Wolf(): base()
+        public override void DoSound()
         {
-
+            Console.WriteLine("Yl");
         }
 
         public override string Stats()
         {
-            return base.Stats(); 
+            return base.Stats() + $", längd på huggtänder: {TeethLength} cm";
         }
     }
 }

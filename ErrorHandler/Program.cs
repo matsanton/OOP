@@ -3,15 +3,17 @@ using System.Collections.Generic;
 
 namespace ErrorHandler
 {
-    class Program
+    public class Program
     {
-        static void Main()
+        private static void Main()
         {
             var errorList = new List<UserError>()
             {
                 new NumericInputError(),
                 new TextInputError(),
-                new NumericInputError()
+                new EmptyInputError(),
+                new DateInputError(),
+                new ZipcodeInputError()
             };
 
             foreach (var error in errorList)

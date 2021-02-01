@@ -1,26 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace OOP
 {
-    class Bird : Animal
+    public class Bird : Animal
     {
         public double WingSpan { get; set; }
 
-        public Bird(): base()
+        public Bird(string name, int age, double weight, double wingspan) : base(name, age, weight)
         {
-
+            WingSpan = wingspan;
         }
 
         public override void DoSound()
         {
-            Console.WriteLine("Tweet, tweet...");
+            Console.WriteLine("kvitter, kvitter...");
         }
 
         public override string Stats()
         {
-            return base.Stats() + $", Wing span: {WingSpan}";
+            return base.Stats() + $", vingbredd: {WingSpan} cm";
         }
     }
 }
