@@ -65,19 +65,20 @@ namespace OOP
             // 3.3 Polymorfism
             var animals = new List<Animal>()
             {
-                new Horse("Pålle", "Kallblod", 9, 300.0),
-                new Bird("Polly", 2, 0.2, 0.90),
-                new Wolf("Stora stygga vargen", 30, 100.0, 2.3),
-                new Dog("Lufsen", "Blandad",6, 40.0),
-                new Worm("Max", 1, .02, isPoisonous: false),
+                new Horse("Pålle", "Kallblod", age: 9, weight: 300.0),
+                new Bird("Polly", age: 2, weight: 0.2,wingspan: 90),
+                new Wolf("Stora stygga vargen", age: 30, weight: 100.0, teethLength: 2.3),
+                new Dog("Lufsen", "Blandad", age:6, weight: 40.0),
+                new Worm("Max", age: 1, weight: 0.02, isPoisonous: false),
                 new Hedgehog("Sonic", numberOfSpikes: 849, age: 10, weight: 5.5 ),
-                new Wolfman("Jack", 39, 90, 2.0, 45),
-                new Dog("Lassie", "Collie", 6, 20.0)
+                new Wolfman("Jack", age: 39, weight: 90, teethLength: 2.0, shoeSize: 45),
+                new Dog("Lassie", "Collie", age: 6, weight: 20.0)
             };
 
+            Console.WriteLine("*** Djur i listan: ***");
             foreach (var animal in animals)
             {
-                Console.WriteLine(animal.ToString());
+                Console.Write(animal.ToString()+": ");
                 if (animal is IPerson)
                 {
                     (animal as IPerson).Talk();
@@ -88,35 +89,40 @@ namespace OOP
                 }
             }
 
+            // 8. Lista för hundar
             var dogs = new List<Dog>()
             {
-                new Dog("Lufsen", "Mixed",6, 40.0),
-                new Dog("Fido", breed: "Pudel", age: 5, weight: 15.0),
-                new Dog("Lassie", "Collie", 6, 20.0)
+                new Dog("Fido", "Pudel", age: 5, weight: 15.0),
+                new Dog("Lassie", "Collie", age: 6, weight: 20.0)
             };
 
             var aHorse = new Horse("Ina Scott", "Varmblod", 9, 300.0);
-            // 3.3 Polymorfism
-            //dogs.Add(aHorse); går ej
-            // Svar på 9: 
-            // Svar på 10: Måste vara en List<Animal> för att både Dog och Horse ska kunna lagras
-            Console.WriteLine("*** Animal Stats ***");
+            // dogs.Add(aHorse); går ej
+            // Svar på 9: listan dogs är en lista av objekt av typen Dog. Det går inte att lägga till ett objekt av typen Horse 
+            // för det är en annan typ även om båda ärver från Animal. 
+            // Svar på 10: Det måste vara en List<Animal> för att både Dog och Horse ska kunna lagras tillsammans.
+            Console.WriteLine("\n*** Animal Stats ***");
             foreach (var animal in animals)
             {
                 Console.WriteLine(animal.Stats());
             }
-            // Svar på 13: 
+            // Svar på 13: Polymorfism regel 1: Vi hanterar alla objekt i animals som instanser av Animal och
+            // enligt regel 2 så används den mest specialiserade metoden, t.ex. kommer den överlagrade Stats-metoden
+            // i Dog-klassen att användas för instanser av Dog.
 
+            Console.WriteLine("\n*** Enbart hundar ***");
             foreach (var animal in animals)
             {
                 if (animal is Dog)
                 {
+                    // Svar på 16: Det går inte att komma åt Info() från animals.
+                    // Svar på 17: Metoden Info() finns inte i klassen Animal, man måste
+                    // casta om animal till en instans av klassen Dog för att komma åt den.
                     Console.WriteLine(animal.Stats());
-                    Console.WriteLine((animal as Dog).Info());
+                    Console.WriteLine((animal as Dog).Info()); // 18.
                 }
             }
-
-            // Svar på 
+           
 
         }
     }

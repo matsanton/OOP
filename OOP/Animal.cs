@@ -24,6 +24,11 @@
         {
             return $"{Name}, ålder: {Age} år, vikt: {Weight} kg";
         }
+
+        public override string ToString()
+        {
+            return this.GetType().Name;
+        }
         #endregion
 
     }
