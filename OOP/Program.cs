@@ -107,8 +107,8 @@ namespace OOP
                 Console.WriteLine(animal.Stats());
             }
             // Svar på 13: Polymorfism regel 1: Vi hanterar alla objekt i animals som instanser av Animal och
-            // enligt regel 2 så används den mest specialiserade metoden, t.ex. kommer den överlagrade Stats-metoden
-            // i Dog-klassen att användas för instanser av Dog.
+            // enligt regel 2 så används den mest specialiserade metoden, t.ex. kommer Stats-metoden i
+            // Dog-klassen att användas för instanser av Dog.
 
             Console.WriteLine("\n*** Enbart hundar ***");
             foreach (var animal in animals)
@@ -123,7 +123,6 @@ namespace OOP
                 }
             }
            
-
         }
     }
 }
